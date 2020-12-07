@@ -42,7 +42,7 @@ const fetchCommits = (path: string): Promise<commits> =>
     })
     .then((data) => {
       if (!data?.commits) {
-        return Promise.reject('コミットが1件もありません。')
+        return Promise.reject('コミットが1件もありません')
       }
       return Promise.resolve(data)
     })
