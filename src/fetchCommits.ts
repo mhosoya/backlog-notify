@@ -36,7 +36,10 @@ export interface commits {
 
 const fetchCommits = (path: string): Promise<commits> =>
   readFile(path)
-    .then((json) => JSON.parse(json))
+    .then((json) => {
+      console.info(json)
+      return JSON.parse(json)
+    })
     .then((data) => {
       if (!data?.commits) {
         return Promise.reject('コミットが1件もありません。')
