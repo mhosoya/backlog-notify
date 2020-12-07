@@ -7,7 +7,7 @@ import postComments from './postComments'
   // 環境変数の読み込み
   const { PROJECT_KEY, API_HOST, API_KEY, GITHUB_EVENT_PATH } = await getEnvs()
 
-  console.error('##### debug #####')
+  process.stdout.write('::debug::debug...' + '##### debug #####');
   console.log(GITHUB_EVENT_PATH)
 
   // event.json の読み込み
