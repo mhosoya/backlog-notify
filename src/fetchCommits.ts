@@ -37,7 +37,7 @@ export interface commits {
 const fetchCommits = (path: string): Promise<commits> =>
   readFile(path)
     .then((json) => {
-      console.info(json)
+      console.log(json)
       return JSON.parse(json)
     })
     .then((data) => {
@@ -58,6 +58,7 @@ const fetchCommits = (path: string): Promise<commits> =>
 
 const readFile = (path: string): Promise<string> =>
   new Promise((resolve, reject) => {
+    console.log("### readFile ###")
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) reject(err)
       resolve(data)
